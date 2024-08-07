@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class NatsGrpcExampleApplication {
 
 	public static void main(String[] args) {
+
 		SpringApplication.run(NatsGrpcExampleApplication.class, args);
 	}
 
