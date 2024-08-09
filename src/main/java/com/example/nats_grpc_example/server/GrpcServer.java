@@ -6,7 +6,7 @@ import io.grpc.ServerBuilder;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 public class GrpcServer implements CommandLineRunner {
     private Server server;
 
