@@ -1,11 +1,7 @@
 syntax = "proto3";
 
 option java_multiple_files = true;
-<<<<<<< HEAD
 option java_package = "com.example.grpc_server";
-=======
-option java_package = "com.example.grpc_nats_client";
->>>>>>> origin/master
 option java_outer_classname = "HelloServiceProto";
 /**
 컴파일 시 HelloServiceGrpc, HelloRequest, HelloResponse 클래스 생성

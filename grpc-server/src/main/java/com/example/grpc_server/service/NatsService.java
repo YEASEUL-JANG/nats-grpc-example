@@ -1,8 +1,4 @@
-<<<<<<<< HEAD:src/main/java/com/example/grpc_server/service/NatsService.java
 package com.example.grpc_server.service;
-========
-package com.example.grpc_nats_client.service;
->>>>>>>> origin/master:src/main/java/com/example/grpc_nats_client/service/NatsService.java
 
 import io.nats.client.Connection;
 import io.nats.client.Message;
