@@ -26,7 +26,7 @@ public class NatsService {
 
     public String subscribeMessage(String subject) throws Exception {
         Subscription subscription = natsConnection.subscribe(subject);
-        Message msg = subscription.nextMessage(Duration.ofSeconds(5)); //5초 타임아웃 설정
+        Message msg = subscription.nextMessage(Duration.ofSeconds(60)); //5초 타임아웃 설정
         logger.info("Received message: {}", msg);
         if (msg == null) {
             throw new RuntimeException("No message received within the timeout period.");
