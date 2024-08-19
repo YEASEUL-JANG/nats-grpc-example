@@ -19,10 +19,21 @@ public class NatsGrpcController {
         this.grpcClientService = grpcClientService;
     }
 
+    /**
+     * gRPC 서버에 메시지를 전송하고 응답을 반환한다.
+     * @param name
+     * @return
+     */
     @GetMapping("/grpc")
     public String callGrpcService(@RequestParam String name){
         return grpcClientService.sayHello(name);
     }
+
+    /**
+     * NATS 서버에 메시지를 발행한다.
+     * @param subject
+     * @param message
+     */
 
     @GetMapping("/publish")
     public String publishToNats(@RequestParam String subject, @RequestParam String message) throws Exception {
@@ -30,8 +41,12 @@ public class NatsGrpcController {
         return "Published message: " + message;
     }
 
+    /**
+     * NATS 서버로부터 메시지를 구독한다.
+     * @param subject
+     */
     @GetMapping("/subscribe")
-    public String subscribeFromNats(@RequestParam String subject) throws Exception {
-        return natsService.subscribeMessage(subject);
+    public void subscribeFromNats(@RequestParam String subject) throws Exception {
+         natsService.subscribeMessage(subject);
     }
 }

@@ -32,6 +32,12 @@ private static final int PORT = 9090;
         //HelloServiceGrpc.HelloServiceStub는 비동기 호출에 사용됨.
         this.asyncStub = HelloServiceGrpc.newStub(channel);
     }
+
+    /**
+     *  gRPC 서버에 요청을 보내고, 비동기 응답을 기다려 처리한다.
+     * @param name
+     * @return
+     */
     public String sayHello(String name) {
         HelloRequest request = HelloRequest.newBuilder().setName(name).build();
         //비동기 호출의 결과를 기다리고 반환할 수 있는 비동기 제어 메커니즘
